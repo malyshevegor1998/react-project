@@ -1,4 +1,6 @@
-const Content = () => {
+import './Profile.css'
+
+const Profile = () => {
     return (
         <div className="content">
             <div>
@@ -25,4 +27,4 @@ const Content = () => {
     );
 }
 
-export default Content;
+export default Profile;

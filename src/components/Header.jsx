@@ -1,4 +1,5 @@
 import picture from './../pict/FC_Orenburg.png'
+import './Header.css'
 
 const Header = () => {
     return (
