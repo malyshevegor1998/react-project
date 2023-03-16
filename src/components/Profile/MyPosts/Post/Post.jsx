@@ -1,9 +1,6 @@
 import s from './Post.module.css'
 
-const Post = (props) => {
-
-    console.log(props.message);
-    
+const Post = (props) => {   
     return (
         <div className={s.item}>
             <img src="https://cdn-icons-png.flaticon.com/512/236/236832.png" alt="" />
