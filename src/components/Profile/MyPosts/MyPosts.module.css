@@ -1,0 +1,8 @@
+.addPost {
+    padding: 1rem 0 0 1rem;
+}
+
+textarea {
+    height: 30px;
+    width: 500px;
+}
