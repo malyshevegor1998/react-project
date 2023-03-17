@@ -18,21 +18,21 @@ const Navbar = () => {
                     Messages
                 </NavLink>
             </div>
-            <div className={s.item}>
+            <div>
                 <NavLink 
                 className={navData => navData.isActive ? s.active : s.a}
                 to='/news'>
                     News
                 </NavLink>
             </div>
-            <div className={s.item}>
+            <div>
                 <NavLink 
                 className={navData => navData.isActive ? s.active : s.a}
                 to='/music'>
                     Music
                 </NavLink>
             </div>
-            <div className={s.item}>
+            <div>
                 <NavLink 
                 className={navData => navData.isActive ? s.active : s.a}
                 to='/settings'>
