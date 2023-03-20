@@ -8,20 +8,18 @@
 
     font-size: 18px;
     padding: 5px 0 0 5px;
-}
 
-.dialogs-items {}
+    background: #C9C9C9;
+}
 
 .active {
     color: gold;
 }
 
-.dialog {
+.dialogsItems {
     grid-area: d;
 }
 
-.messages {}
-
-.message {
+.messages {
     grid-area: m;
 }

@@ -6,3 +6,12 @@ textarea {
     height: 30px;
     width: 500px;
 }
+
+.myPosts {
+    padding: 1rem;
+    font-size: 20px;
+}
+
+.button {
+    padding: 0 0 1rem 0;
+}

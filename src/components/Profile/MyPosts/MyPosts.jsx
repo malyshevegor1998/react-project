@@ -4,11 +4,14 @@ import Post from './Post/Post.jsx'
 const MyPosts = () => {
 
     return (
-            <div>
+            <div className={s.myPosts}>
                 my posts
                 <div className={s.addPost}>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <div className={s.button}>
                     <button>Add post</button>
+                    </div>
+                    
                 </div>
                 <div className={s.posts}>
                     <Post message="Hello everyone!" countLikes="12"/>
