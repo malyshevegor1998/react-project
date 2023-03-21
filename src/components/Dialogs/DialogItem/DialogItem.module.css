@@ -1,3 +1,7 @@
 .dialog a{
     color: black;
 }
+
+.dialog img {
+    width: 50px;
+}
