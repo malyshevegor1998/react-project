@@ -1,5 +1,7 @@
 import { rerenderEntireTree } from "../render";
 
+let postId = 7;
+
 let state = {
     messagesPage: {
         dialogsData: [
@@ -27,16 +29,24 @@ let state = {
             { id: 4, message: "Fuck me!", countLikes: 3 },
             { id: 5, message: "Suck my dick", countLikes: 5 },
             { id: 6, message: "Pizda", countLikes: 7 },
-        ]
+        ],
+        newPostText: ""
     }
 };
 
-export let addPost = (postMessage) => {
-    let newPost = {id: 7, message: `${postMessage}`, countLikes: 0};
+export let addPost = () => {
+    let newPost = {id: postId, message: `${state.profilePage.newPostText}`, countLikes: 0};
     state.profilePage.posts.push(newPost);
-    console.log(state.profilePage);
+    console.log(newPost)
+    addNewPostText("");
     rerenderEntireTree(state);
+    postId++;
 };
 
+export let addNewPostText = (postText) => {
+    state.profilePage.newPostText = postText;
+    console.log(state.profilePage.newPostText);
+    rerenderEntireTree(state);
+}
 
 export default state;
