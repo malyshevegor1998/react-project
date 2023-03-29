@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+    console.log('Call function rerenderEntireTree');
+}
 
 let postId = 7;
 
@@ -47,6 +49,10 @@ export let addNewPostText = (postText) => {
     state.profilePage.newPostText = postText;
     console.log(state.profilePage.newPostText);
     rerenderEntireTree(state);
-}
+};
+
+export let subscribe = (callback) => {
+    rerenderEntireTree = callback;
+};
 
 export default state;
