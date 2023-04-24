@@ -1,10 +1,5 @@
-let rerenderEntireTree = () => {
-    console.log('Call function rerenderEntireTree');
-}
-
-let postId = 7;
-
-let state = {
+let store = {
+ _state: {
     messagesPage: {
         dialogsData: [
             { id: 1, dialogName: "Egor" },
@@ -34,25 +29,35 @@ let state = {
         ],
         newPostText: ""
     }
-};
+},
 
-export let addPost = () => {
-    let newPost = {id: postId, message: `${state.profilePage.newPostText}`, countLikes: 0};
-    state.profilePage.posts.push(newPost);
+getState () {
+    return this._state;
+},
+
+_callSubscriber () {
+    console.log('Call function rerenderEntireTree');
+},
+
+addPost () {
+    debugger;
+    let newPost = {id: '7', message: `${this._state.profilePage.newPostText}`, countLikes: 0};
+    this._state.profilePage.posts.push(newPost);
     console.log(newPost)
-    addNewPostText("");
-    rerenderEntireTree(state);
-    postId++;
+    this.addNewPostText("");
+    this._callSubscriber(this._state);
+},
+
+addNewPostText (postText) {
+    this._state.profilePage.newPostText = postText;
+    console.log(this._state.profilePage.newPostText);
+    this._callSubscriber(this._state);
+},
+
+subscribe (callback) {
+    this._callSubscriber = callback;
+},
 };
 
-export let addNewPostText = (postText) => {
-    state.profilePage.newPostText = postText;
-    console.log(state.profilePage.newPostText);
-    rerenderEntireTree(state);
-};
-
-export let subscribe = (callback) => {
-    rerenderEntireTree = callback;
-};
-
-export default state;
+export default store;
+window.store = store;
