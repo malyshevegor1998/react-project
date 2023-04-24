@@ -58,6 +58,7 @@ let store = {
     },
 
     dispatch(action) {
+        debugger;
         if (action.type === ADD_POST) {
             let newPost = { id: this.state.profilePage.postId, message: `${this.state.profilePage.newPostText}`, countLikes: 0 };
             this.state.profilePage.posts.push(newPost);
@@ -76,6 +77,7 @@ let store = {
             this.state.messagesPage.messagesData.push(newMessage);
             this.state.messagesPage.newMessageText = "";
             this.rerenderEntireTree(this.state);
+            this.state.messagesPage.messageId++;
         }
     },
 
